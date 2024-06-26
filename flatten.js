@@ -1,4 +1,3 @@
-/*
 // FUNCTION IMPLEMENTATION
 const assertArrayEqual = function(arr1, arr2) {
   let arrResult = eqArrays(arr1, arr2);
@@ -21,16 +20,24 @@ const eqArrays = function(arr1, arr2) {
     }
   } return true;
 };
-*/
 
 const flatten = function(nestedArray) {
-  let flatArray = nestedArray.flat(2);
+  let flatArray = [];
+  for (let i = 0; i < nestedArray.length; i++) {
+    if (Array.isArray(nestedArray[i])) {
+      for (let j = 0; j < nestedArray[i].length; j++) {
+        flatArray.push(nestedArray[i][j]);
+      }
+    } else {
+      flatArray.push(nestedArray[i]);
+    }
+  }
+  console.log(flatArray);
   return flatArray;
 };
 
-console.log(flatten([1, 2, [3, 4], 5, [6]]));
+
 // TEST CODE
-/*
-assertArrayEqual([1, 2, 3], [1, 2, 3]); // => should PASS
-assertArrayEqual([1, 2, 3], [4, 2, 3]);
-assertArrayEqual([1, 2, 3], [1, 2, 3,4]);*/
+assertArrayEqual(flatten([1, [2, 3]]), [1, 2, 3]); // => should PASS
+assertArrayEqual(flatten([1, 2, [3, 4]]), [1, 2, 3, 4]);
+assertArrayEqual(flatten([1, 2, [3, 4], 5, [6]]), [1, 2, 3, 4, 5, 6]);
