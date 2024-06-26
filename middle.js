@@ -30,8 +30,9 @@ const middle = function(arr) {
     middleArrayValue.push(arr[Math.floor(arr.length / 2)]);
     return middleArrayValue;
   }
-  middleArrayValue.push(arr[Math.floor(arr.length / 2) - 1]);
-  middleArrayValue.push(arr[Math.ceil(arr.length / 2)]);
+  let middleIndex = arr.length / 2;
+  middleArrayValue.push(arr[middleIndex - 1]);
+  middleArrayValue.push(arr[middleIndex]);
   return middleArrayValue;
 };
 
