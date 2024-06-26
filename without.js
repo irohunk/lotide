@@ -34,7 +34,7 @@ const without = function(arr1, arr2) {
       newArr.push(arr1[i]);
     }
   }
-  console.log(newArr);
+  return newArr;
 }
 
 // TEST CODE
@@ -43,5 +43,7 @@ without(words, ["lighthouse"]); // no need to capture return value for this test
 // Make sure the original array was not altered by the without function
 assertArraysEqual(words, ["hello", "world", "lighthouse"]);
 
-without([1, 2, 3], [1]); // => [2, 3]
-without(["1", "2", "3"], [1, 2, "3"]); // => ["1", "2"]
+assertArraysEqual(without([1, 2, 3], [1]), [2, 3]); // => should PASS
+
+console.log(without([1, 2, 3], [1])); // => [2, 3]
+console.log(without(["1", "2", "3"], [1, 2, "3"])); // => ["1", "2"]
