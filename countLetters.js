@@ -8,18 +8,17 @@ const assertEqual = function(actual, expected) {
 };
 
 const countLetters = function(sentence) {
-  let splitSentence = sentence.split("");
-  let LetterCount = {};
-  for (let letters of splitSentence) {
+  let letterCount = {};
+  for (let letters of sentence) {
     if (letters !== " ") {
-      if (LetterCount[letters]) {
-        LetterCount[letters] += 1;
+      if (letterCount[letters]) {
+        letterCount[letters] += 1;
       } else {
-        LetterCount[letters] = 1;
+        letterCount[letters] = 1;
       }
     }
   }
-  return LetterCount;
+  return letterCount;
 };
 
 
