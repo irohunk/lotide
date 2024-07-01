@@ -32,4 +32,10 @@ describe("#middle", () => {
   it('returns [3, 4] for [1, 2, 3, 4, 5, 6]', () => {
     assert.deepEqual(middle([1, 2, 3, 4, 5, 6]), [3, 4]); // Assertion: Check if middle([1, 2, 3, 4, 5, 6]) returns [3, 4]
   });
+
+  it('does not modify the original array', () => {
+    const originalArray = [1, 2, 3];
+    middle(originalArray);
+    assert.deepEqual(originalArray, [1, 2, 3]);
+  });
 });

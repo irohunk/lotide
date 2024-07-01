@@ -25,4 +25,10 @@ describe("#tail", () => {
     assert.deepEqual(tail([]), []);
     // Assertion: Check if tail([]) returns []
   });
+
+  it('does not modify the original array', () => {
+    const originalArray = ["Yo Yo", "Lighthouse", "Labs"];
+    tail(originalArray);
+    assert.deepEqual(originalArray, ["Yo Yo", "Lighthouse", "Labs"]);
+  });
 });
