@@ -1,44 +1,29 @@
 // FUNCTION IMPLEMENTATION
-const assertArrayEqual = function(arr1, arr2) {
-  let arrResult = eqArrays(arr1, arr2);
-
-  if (arrResult) {
-    console.log(`✅✅✅ Assertion Passed: ${arr1} === ${arr2}`);
-  } else {
-    console.log(`🛑🛑🛑 Assertion Failed: ${arr1} !== ${arr2}`);
-  }
-};
-
-const eqArrays = function(arr1, arr2) {
-  if (arr1.length !== arr2.length) {
-    return false;
-  }
-  
-  for (let i = 0; i < arr1.length; i++) {
-    if (arr1[i] !== arr2[i]) {
-      return false;
-    }
-  } return true;
-};
-
+// middle function definition
+// This function takes an array as an argument and returns the middle element(s).
 const middle = function(arr) {
+  // Initialize an empty array to hold the middle value(s)
   let middleArrayValue = [];
+  
+  // If the array has 2 or fewer elements, there is no middle, return an empty array
   if (arr.length <= 2) {
     return [];
   }
+  
+  // If the array has an odd number of elements, return the single middle element
   if (arr.length % 2 !== 0) {
+    // Calculate the middle index and push the middle element into middleArrayValue
     middleArrayValue.push(arr[Math.floor(arr.length / 2)]);
     return middleArrayValue;
   }
+  
+  // If the array has an even number of elements, return the two middle elements
   let middleIndex = arr.length / 2;
+  // Push the two middle elements into middleArrayValue
   middleArrayValue.push(arr[middleIndex - 1]);
   middleArrayValue.push(arr[middleIndex]);
   return middleArrayValue;
 };
 
-// TEST CODE
-assertArrayEqual(middle([1, 2]), []); // => should PASS
-assertArrayEqual(middle([1, 2, 3]), [2]); // => should PASS
-assertArrayEqual(middle([1, 2, 3, 4]), [2, 3]);
-assertArrayEqual(middle([1, 2, 3, 4, 5]), [3]);
-assertArrayEqual(middle([1, 2, 3, 4, 5, 6]), [3, 4]);
+// Export the middle function to be used in other modules
+module.exports = middle;
