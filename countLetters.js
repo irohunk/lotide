@@ -9,7 +9,7 @@ const assertEqual = function(actual, expected) {
 
 const countLetters = function(sentence) {
   let letterCount = {};
-  for (let letters of sentence) {
+  for (const letters of sentence) {
     if (letters !== " ") {
       if (letterCount[letters]) {
         letterCount[letters] += 1;
@@ -28,3 +28,5 @@ assertEqual(result["l"], 1);
 assertEqual(result["i"], 2);
 assertEqual(result["h"], 4);
 assertEqual(result["e"], 3);
+
+module.exports = countLetters;

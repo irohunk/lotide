@@ -14,7 +14,6 @@ const findKey = function(object, callback) {
       return key;
     }
   }
-  return undefined;
 };
 
 let result = findKey(
@@ -32,3 +31,5 @@ let result = findKey(
 
 // TEST CODE
 assertEqual(result, "noma");
+
+module.exports = findKey;

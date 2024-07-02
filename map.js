@@ -51,3 +51,6 @@ const results3 = map(words, (word) => word.toUpperCase());
 console.log(results3);
 
 assertArraysEqual(results3, ['GROUND', 'CONTROL', 'TO', 'MAJOR', 'TOM']); // => should PASS
+
+
+module.exports= map;

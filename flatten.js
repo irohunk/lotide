@@ -39,3 +39,5 @@ const flatten = function(nestedArray) {
 assertArrayEqual(flatten([1, [2, 3]]), [1, 2, 3]); // => should PASS
 assertArrayEqual(flatten([1, 2, [3, 4]]), [1, 2, 3, 4]);
 assertArrayEqual(flatten([1, 2, [3, 4], 5, [6]]), [1, 2, 3, 4, 5, 6]);
+
+module.exports = flatten;

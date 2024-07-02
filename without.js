@@ -47,3 +47,6 @@ assertArraysEqual(without([1, 2, 3], [1]), [2, 3]); // => should PASS
 
 console.log(without([1, 2, 3], [1])); // => [2, 3]
 console.log(without(["1", "2", "3"], [1, 2, "3"])); // => ["1", "2"]
+
+
+module.exports = without;
